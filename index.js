@@ -58,7 +58,9 @@ function startApp() {
 let circle = new shapes.Circle();
 let triangle = new shapes.Triangle();
 let square = new shapes.Square();
+let logoText = new shapes.LogoText('JMK', 'green');
 
 circle.setColor('blue');
+circle.addLogoText(logoText)
 
 console.log(circle);
