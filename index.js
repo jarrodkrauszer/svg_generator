@@ -1,5 +1,8 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const shapes = require('./lib/shapes.js');
+const svg = require('./lib/svg.js');
+const logoText = require('./lib/logo-text.js');
 
 const questions = [
   {
@@ -58,9 +61,18 @@ function startApp() {
 let circle = new shapes.Circle();
 let triangle = new shapes.Triangle();
 let square = new shapes.Square();
-let logoText = new shapes.LogoText('JMK', 'green');
+let textEl = new logoText('JMK', '#fff');
+let logo = new svg(triangle, textEl);
 
-circle.setColor('blue');
-circle.addLogoText(logoText)
+triangle.setColor('blue');
 
-console.log(circle);
+function writeFile() {
+  fs.writeFile('./logo.svg', logo.render(), (err) => {
+    if(err) throw err;
+  
+    console.log('File created successfully!');
+  });
+}
+
+writeFile();
+
