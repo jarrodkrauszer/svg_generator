@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('./lib/shapes.js');
-const svg = require('./lib/svg.js');
-const logoText = require('./lib/logo-text.js');
+const { Circle, Square, Triangle } = require('./lib/shapes.js');
+const SVG = require('./lib/SVG.js');
+const LogoText = require('./lib/LogoText.js');
 
 const questions = [
   {
@@ -29,7 +29,7 @@ const questions = [
     type: 'list',
     message: 'Please select a shape:',
     name: 'shape',
-    choices: ['Circle', 'Triagnle', 'Square']
+    choices: ['Circle', 'Triangle', 'Square']
   },{
     type: 'list',
     message: 'How would you like to enter the color of the shape?',
@@ -58,11 +58,11 @@ function startApp() {
 
 // startApp();
 
-let circle = new shapes.Circle();
-let triangle = new shapes.Triangle();
-let square = new shapes.Square();
-let textEl = new logoText('JMK', '#fff');
-let logo = new svg(triangle, textEl);
+let circle = new Circle();
+let triangle = new Triangle();
+let square = new Square();
+let textEl = new LogoText('JMK', 'blue');
+let logo = new SVG(triangle, textEl);
 
 triangle.setColor('blue');
 
