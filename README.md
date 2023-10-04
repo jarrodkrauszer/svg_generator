@@ -2,7 +2,7 @@
   
 ## Description
   
-This nodejs app uses inquirer to prompt the end user a list of questions to create a svg file.  We are using object oriented programming to handle all the redundant code for the differnt shapes.  We also used Jest to run tests on the different shapes to ensure we are returning the expected data.
+This nodejs app uses inquirer to prompt the end user a list of questions to create a svg file.  We are using object oriented programming to handle all the redundant code for the different shapes.  We also used Jest to run tests on the different shapes to ensure we are returning the expected data.
 
 ## Installation
 
