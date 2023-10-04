@@ -22,7 +22,7 @@ const questions = [
     when: (answers) => answers.textColor === 'Color Keyword'
   },
   {
-    message: 'Please enter the hexadecimal value you would like to use for the text color'.cyan,
+    message: 'Please enter the hexadecimal value including the # you would like to use for the text color'.cyan,
     name: 'textHex',
     when: (answers) => answers.textColor === 'Hexadecimal'
   },
@@ -43,14 +43,14 @@ const questions = [
     when: (answers) => answers.shapeColor === 'Color Keyword'
   },
   {
-    message: 'Please enter the hexadecimal value you would like to use for the color of the shape'.cyan,
+    message: 'Please enter the hexadecimal value including the # you would like to use for the color of the shape'.cyan,
     name: 'shadeHex',
     when: (answers) => answers.shapeColor === 'Hexadecimal'
   },
 ];
 
 function writeFile(data) {
-  fs.writeFile('./logo.svg', data, (err) => {
+  fs.writeFile('./examples/logo.svg', data, (err) => {
     if(err) throw err;
   
     console.log('Generated logo.svg!');
